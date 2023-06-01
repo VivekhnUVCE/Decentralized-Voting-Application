@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>To Do Decentralized Application</title>
+    <script src="main.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js"
+        type="application/javascript"></script>
+	<title>Voting DAPP</title>
+	<style>
+
+		button {
+			background-color: #4f5ebd;
+			color: white;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			display: block;
+			margin: 50px auto 0;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+
+		/* Paragraph styles */
+		p {
+			text-align: center;
+			font-size: 50px;
+			margin-top: 50px;
+		}
+
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-top: 50px;
+		}
+		
+		input[type=text], select {
+			width: 30%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+		}
+		
+        input[type=number], select {
+			width: 30%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+		}
+
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+		
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center ;
+			justify-content: center;
+			margin-top: 20px;
+			color:rgb(0, 0, 0);
+		}
+		
+		span {
+			display: block;
+			margin-bottom: 10px;
+		}
+		image 
+		{
+			background: fixed;
+		}
+
+/* Style the navigation bar */
+		.navbar button {
+			overflow: hidden;
+			font-family: Arial;
+		}
+
+		/* Style the links inside the navigation bar */
+		.navbar a {
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 20px;
+			text-decoration: none;
+		}
+
+		/* Change the color of links on hover */
+		
+
+		
+        #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        }
+
+        #myTable th,
+        #myTable td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+        }
+
+        #myTable th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        }
+		body {
+  background-image: url("https://i.pinimg.com/564x/4a/6c/8b/4a6c8b5d0f8753ec44610c39a2749b5f.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+	</style>
+
+</head>
+<body>
+    <div class = "navbar">
+        <a href="/index.html"><button>Vote</button></a>
+        <a href="/ListVoters.html"><button>List Voters</button></a>
+    </div>
+
+    <div class="container"><h1>Welcome to the Decentralized Voting Application</h1></div>
+
+    <div>
+        <button onclick="connectMetamask()">Connect Metamask</button>
+        <p id="metamasknotification"></p>
+    </div>
+
+    <div class="container">
+        <span><h1>Vote here</h1></span>
+        <input type = "number" id ="vote" placeholder="Add Index of the Voter ... ">
+        <button onclick="addVote()">Add Vote</button>
+        <p id="cand"></p>
+        
+        <button onclick="voteStatus()">Check Voting Status</button>
+        <p id = "status"></p>
+        <p id = "time"></p>
+    </div>
+</body>
+</html>
